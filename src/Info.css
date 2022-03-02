@@ -10,7 +10,29 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    width: 90%;
+    width: min(90%, 1000px);
+}
+
+.Info > div {
+    position: relative;
+}
+
+@media screen and (min-width: 1200px) {
+    .Info {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 5rem;
+    }
+
+    .Info > div + div::before {
+        content: "";
+        background-color: hsl(0, 0%, 70%);
+        position: absolute;
+        top: -50%;
+        left: -50px;
+        width: 1px;
+        height: 100px;
+    }
 }
 
 .Info h2, .Info p {

@@ -1,4 +1,5 @@
 import "./Search.css"
+import iconArrow from "./images/icon-arrow.svg";
 
 const Search = () => {
     return (
@@ -13,7 +14,7 @@ const Search = () => {
                         />
                 </div>
                 <div className="search-button">
-                    <button form="ip-form">{ `>` }</button>
+                    <button form="ip-form"><img src={ iconArrow } alt="iconArrow" /></button>
                 </div>
             </form>
         </div>

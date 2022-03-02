@@ -1,5 +1,5 @@
 .Search {
-    width: 90%;
+    width: min(90%, 500px);
 }
 
 .Search form {
@@ -9,6 +9,7 @@
 .search-input > input, .search-button > button {
     padding: 1.5rem;
     border: 1px solid hsl(0, 0%, 0%);
+    height: 50px;
 }
 
 .search-input {
