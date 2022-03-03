@@ -2,9 +2,7 @@ import "./Map.css"
 
 const Map = () => {
     return (
-        <div className="Map">
-            <p>map</p>
-        </div>
+        <div className="Map" id="map"></div>
     );
 }
 

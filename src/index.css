@@ -65,3 +65,7 @@ body, #root, .App {
 .main-content {
   gap: 50px;
 }
+
+#map {
+  height: 700px;
+}
