@@ -1,7 +1,7 @@
 import "./Search.css"
 import iconArrow from "./images/icon-arrow.svg";
 
-const Search = () => {
+const Search = ({ position, setPosition }) => {
     return (
         <div className="Search">
             <form id="ip-form" onSubmit={ () => console.log(`Submit...`) }>
