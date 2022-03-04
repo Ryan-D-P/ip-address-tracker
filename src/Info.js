@@ -1,23 +1,23 @@
 import "./Info.css"
 
-const Info = () => {
+const Info = ({ ip, location, timezone, isp }) => {
     return (
         <div className="Info">
-            <div className="ip-address">
+            <div className="Info-col ip-address">
                 <p>IP ADDRESS</p>
-                <h2>192.212.174.101</h2>
+                <h2>{ ip }</h2>
             </div>
-            <div className="location">
+            <div className="Info-col location">
                 <p>LOCATION</p>
-                <h2>Brooklyn, NY 10001</h2>
+                <h2>{ location }</h2>
             </div>
-            <div className="timezone">
+            <div className="Info-col timezone">
                 <p>TIMEZONE</p>
-                <h2>UTC - 05:00</h2>
+                <h2>{ timezone }</h2>
             </div>
-            <div className="ISP">
+            <div className="Info-col ISP">
                 <p>ISP</p>
-                <h2>SpaceX Starlink</h2>
+                <h2>{ isp }</h2>
             </div>
         </div>
     );

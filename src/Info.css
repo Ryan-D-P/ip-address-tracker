@@ -10,13 +10,40 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    width: min(90%, 1000px);
+    gap: 25px;
+    width: min(90%, 1500px);
+    height: auto;
+    min-height: 200px;
 }
 
 @media screen and (min-width: 1200px) {
     .Info {
         top: 160px;
+        padding: 0;
+        gap: 0;
+        height: 150px;
+    }
+}
+
+.Info-col {
+    flex-basis: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    padding: 0rem 1rem;
+}
+
+
+@media screen and (min-width: 1200px) {
+    .Info-col {
+        align-items: flex-start;
+    }
+    
+    .Info-col + .Info-col {
+        border-left: 1px solid hsl(0, 0%, 70%);
     }
 }
 
@@ -28,17 +55,7 @@
     .Info {
         flex-direction: row;
         justify-content: space-between;
-        padding: 5rem;
-    }
-
-    .Info > div + div::before {
-        content: "";
-        background-color: hsl(0, 0%, 70%);
-        position: absolute;
-        top: -50%;
-        left: -50px;
-        width: 1px;
-        height: 100px;
+        padding: 0rem 5rem;
     }
 }
 

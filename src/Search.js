@@ -2,9 +2,7 @@ import "./Search.css"
 import iconArrow from "./images/icon-arrow.svg";
 import { useState } from "react";
 
-const Search = ({ position, setPosition }) => {
-    // Manage the IP of user input
-    const [ip, setIp] = useState(``);
+const Search = ({ setPosition, ip, setIp, setLocation, setTimezone, setIsp }) => {
 
     // Get location and ISP from IP using GeoIP API
     const getIpInfo = async (e) => {
@@ -12,7 +10,13 @@ const Search = ({ position, setPosition }) => {
         const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_JTnelcFGhhHGGnIZYOb2BtV0O6hJg&ipAddress=${ip}`);
         const ipData = await response.json();
 
+        // Update MapContainer
         setPosition([ipData.location.lat, ipData.location.lng]);
+
+        // Update Info component state
+        setLocation(`${ipData.location.city}, ${ipData.location.region}, ${ipData.location.postalCode}`);
+        setTimezone(`UTC ${ipData.location.timezone}`);
+        setIsp(ipData.isp);
     };
 
     return (
