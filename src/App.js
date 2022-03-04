@@ -1,4 +1,5 @@
 import Search from "./Search";
+import BadInputError from "./BadInputError";
 import Info from "./Info";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import patternBg from "./images/pattern-bg.png";
@@ -14,6 +15,9 @@ function App() {
   const [timezone, setTimezone] = useState(``);
   const [isp, setIsp] = useState(``);
 
+  // Render error message if bad/invalid input is given as an IP
+  const [isBadInput, setIsBadInput] = useState(false);
+
   return (
     <div className="App">
       <header className="header-content">
@@ -26,7 +30,12 @@ function App() {
           setLocation={ setLocation }
           setTimezone={ setTimezone }
           setIsp={ setIsp }
+          isBadInput={ isBadInput }
+          setIsBadInput={ setIsBadInput }
         />
+
+        { isBadInput ? <BadInputError /> : null }
+
       </header>
       <main className="main-content">
         <Info
