@@ -1,7 +1,8 @@
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import Search from "./Search";
 import BadInputError from "./BadInputError";
 import Info from "./Info";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import ChangeView from "./ChangeView"
 import patternBg from "./images/pattern-bg.png";
 import { useState } from "react";
 
@@ -47,14 +48,15 @@ function App() {
 
         {
           position.length === 2 ?
-            (<MapContainer id="map" center={ position } zoom={13}>
+            (<MapContainer id="map" center={ position } zoom={ 13 }>
+              <ChangeView center={ position } zoom={ 13 } />
               <TileLayer 
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
               <Marker position={ position }>
                 <Popup>
-                  A pretty CSS3 popup. <br /> Easily customizable.
+                  <p>Location of IP address `{ ip }`</p>
                 </Popup>
               </Marker>
             </MapContainer>) 
