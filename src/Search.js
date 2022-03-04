@@ -34,7 +34,7 @@ const Search = ({ setPosition, ip, setIp, setLocation, setTimezone, setIsp, isBa
                             type="text"
                             name="ip"
                             id="ip"
-                            placeholder="Search for any IP address or domain"
+                            placeholder="Search for any IP address (example: `192.212.174.101`)"
                             value={ ip }
                             onChange={ (e) => setIp(e.target.value) }
                         />
