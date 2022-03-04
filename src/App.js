@@ -29,8 +29,8 @@ function App() {
                   A pretty CSS3 popup. <br /> Easily customizable.
                 </Popup>
               </Marker>
-            </MapContainer>) :
-            null
+            </MapContainer>) 
+            : null
         }
 
       </main>
