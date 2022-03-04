@@ -11,7 +11,8 @@ const Search = ({ position, setPosition }) => {
         e.preventDefault();
         const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_JTnelcFGhhHGGnIZYOb2BtV0O6hJg&ipAddress=${ip}`);
         const ipData = await response.json();
-        console.log(ipData);
+
+        setPosition([ipData.location.lat, ipData.location.lng]);
     };
 
     return (
